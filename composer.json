@@ -1,5 +1,5 @@
 {
-	"name": "bond/preacher",
+	"name": "robust/preacher",
 	"description": "Business tool library",
 	"license": "mit",
 	"autoload": {
