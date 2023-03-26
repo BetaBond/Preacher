@@ -1,6 +1,6 @@
 <?php
 
-namespace Bond\Preacher;
+namespace Colorful\Preacher;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Response;

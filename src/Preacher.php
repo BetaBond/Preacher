@@ -1,6 +1,6 @@
 <?php
 
-namespace Bond\Preacher;
+namespace Colorful\Preacher;
 
 use Closure;
 use JetBrains\PhpStorm\Pure;
