@@ -7,11 +7,6 @@
 			"Colorful\\Preacher\\": "src/"
 		}
 	},
-	"autoload-dev": {
-		"psr-4": {
-			"Colorful\\Tests\\Preacher\\": "tests/"
-		}
-	},
 	"authors": [
 		{
 			"name": "BetaBond",
@@ -22,9 +17,6 @@
 		"php": "^8.0.2",
 		"illuminate/support": "^9.0",
 		"illuminate/http": "^9.0"
-	},
-	"require-dev": {
-		"phpunit/phpunit": "^9.5.10"
 	},
 	"config": {
 		"sort-packages": true,

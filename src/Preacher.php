@@ -67,7 +67,7 @@ class Preacher
      *
      * @var int
      */
-    const DEFAULT_JSON_OPTIONS = JSON_UNESCAPED_UNICODE;
+    const DEFAULT_JSON_OPTIONS = JSON_PARTIAL_OUTPUT_ON_ERROR;
     
     /**
      * 默認的 [HTTP] 狀態碼
