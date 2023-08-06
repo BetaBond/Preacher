@@ -255,7 +255,7 @@ class Preacher
     }
     
     /**
-     * 設置響應狀態碼
+     * 设置响应状态码
      *
      * @param  int  $code
      *
@@ -269,7 +269,7 @@ class Preacher
     }
     
     /**
-     * 獲取響應狀態碼
+     * 获取响应状态码
      *
      * @return int
      */
@@ -279,7 +279,7 @@ class Preacher
     }
     
     /**
-     * 設置響應消息
+     * 设置响应消息
      *
      * @param  string  $msg
      *
@@ -294,7 +294,7 @@ class Preacher
     }
     
     /**
-     * 返回響應消息
+     * 获取响应消息
      *
      * @return string
      */
@@ -305,7 +305,7 @@ class Preacher
     
     
     /**
-     * 設置分頁信息
+     * 设置分页信息
      *
      * @param  int  $page
      * @param  int  $prePage
@@ -331,7 +331,7 @@ class Preacher
     }
     
     /**
-     * 獲取分頁信息
+     * 获取分页信息
      *
      * @return object
      */
@@ -341,7 +341,7 @@ class Preacher
     }
     
     /**
-     * 設置回執信息
+     * 设置回执信息
      *
      * @param  object  $data
      *
@@ -355,7 +355,7 @@ class Preacher
     }
     
     /**
-     * 返回回執信息
+     * 返回回执信息
      *
      * @return object
      */
@@ -365,7 +365,7 @@ class Preacher
     }
     
     /**
-     * 設置行數據
+     * 设置行数据
      *
      * @param  array  $data
      *
@@ -379,7 +379,7 @@ class Preacher
     }
     
     /**
-     * 獲取行數據
+     * 获取行数据
      *
      * @return array
      */
@@ -389,7 +389,7 @@ class Preacher
     }
     
     /**
-     * 判斷是否是成功的
+     * 判断是否成功
      *
      * @return bool
      */
@@ -399,7 +399,7 @@ class Preacher
     }
     
     /**
-     * 導出響應
+     * 导出响应
      *
      * @return Export
      */

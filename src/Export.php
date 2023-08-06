@@ -6,7 +6,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Response;
 
 /**
- * 導出數據
+ * 导出数据
  *
  * @author beta
  */
@@ -14,7 +14,7 @@ class Export
 {
     
     /**
-     * 構造函數 - 構造基本信息
+     * 构造导出实例
      *
      * @param  array  $data
      */
@@ -25,7 +25,7 @@ class Export
     }
     
     /**
-     * 以 [array] 形式導出
+     * 以 [array] 形式导出
      *
      * @return array
      */
@@ -35,11 +35,12 @@ class Export
     }
     
     /**
-     * 以 [json] 形式導出
+     * 以 [json] 形式导出
      *
      * @param  int  $status
      * @param  array  $headers
      * @param  int  $options
+     *
      * @return JsonResponse
      */
     public function json(
@@ -56,12 +57,13 @@ class Export
     }
     
     /**
-     * 以 [jsonp] 形式導出
+     * 以 [jsonp] 形式导出
      *
      * @param  string|null  $callback
      * @param  int  $status
      * @param  array  $headers
      * @param  int  $options
+     *
      * @return JsonResponse
      */
     public function jsonp(
