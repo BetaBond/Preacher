@@ -6,7 +6,7 @@ use Closure;
 use JetBrains\PhpStorm\Pure;
 
 /**
- * 傳教士 - [Preacher]
+ * 传教士 - [Preacher]
  *
  * @author beta
  */
@@ -14,63 +14,63 @@ class Preacher
 {
     
     /**
-     * 成功響應狀態碼
+     * 成功状态响应码
      *
      * @var int
      */
     const RESP_CODE_SUCCEED = 200;
     
     /**
-     * 警告響應狀態碼
+     * 警告状态响应码
      *
      * @var int
      */
     const RESP_CODE_WARN = 400;
     
     /**
-     * 失敗響應狀態碼
+     * 失败状态响应码
      *
      * @var int
      */
     const RESP_CODE_FAIL = 500;
     
     /**
-     * 鑒權響應狀態碼
+     * 鉴权状态响应码
      *
      * @var int
      */
     const RESP_CODE_AUTH = 401;
     
     /**
-     * 訪問被拒絕狀態碼
+     * 访问被拒绝响应码
      *
      * @var int
      */
     const RESP_CODE_ACCESS_DENIED = 403;
     
     /**
-     * 響應狀態碼鍵名稱
+     * 默认状态码键名称
      *
      * @var string
      */
     const DEFAULT_KEY_CODE = 'code';
     
     /**
-     * 響應消息鍵名稱
+     * 默认消息键名称
      *
      * @var string
      */
     const DEFAULT_KEY_MSG = 'msg';
     
     /**
-     * 默認的 [json] 選項
+     * 默认的 [json] 选项
      *
      * @var int
      */
     const DEFAULT_JSON_OPTIONS = JSON_PARTIAL_OUTPUT_ON_ERROR;
     
     /**
-     * 默認的 [HTTP] 狀態碼
+     * 默认的 [HTTP] 状态码
      *
      * @var int
      */
@@ -84,21 +84,21 @@ class Preacher
     private static Closure $messageActivity;
     
     /**
-     * 響應碼
+     * 状态码
      *
      * @var int
      */
     private int $code;
     
     /**
-     * 響應消息
+     * 响应消息
      *
      * @var string
      */
     private string $msg;
     
     /**
-     * 響應數據
+     * 响应数据
      *
      * @var array
      */
@@ -115,13 +115,14 @@ class Preacher
     }
     
     /**
-     * 驗證並返回預設
+     * 验证并返回预设
      *
      * @param  bool  $allow
-     * @param  mixed  $pass
-     * @param  mixed  $noPass
+     * @param  self  $pass
+     * @param  self  $noPass
      * @param  callable|null  $handle
-     * @return mixed
+     *
+     * @return self
      */
     public static function allow(
         bool $allow,
@@ -137,7 +138,7 @@ class Preacher
     }
     
     /**
-     * 返回基礎的默認信息
+     * 返回基础的默认信息
      *
      * @return self
      */
@@ -148,53 +149,56 @@ class Preacher
     }
     
     /**
-     * 等同於 [setMsg()]
+     * 等同于 [setMsg()]
      *
      * @param  string  $msg
+     *
      * @return self
      */
-    #[Pure]
     public static function msg(
         string $msg
     ): self {
-        return new self(msg: $msg);
+        return (new self())->setMsg($msg);
     }
     
     /**
-     * 等同於 [setCode()]
+     * 等同于 [setCode()]
      *
      * @param  int  $code
+     *
      * @return Preacher
      */
-    #[Pure]
     public static function code(
         int $code
     ): self {
-        return new self(code: $code);
+        return (new self())->setCode($code);
     }
     
     /**
-     * 同時設置 [msg] 和 [code]
+     * 同时设置 [msg] 和 [code]
      *
      * @param  int  $code
      * @param  string  $msg
+     *
      * @return Preacher
      */
-    #[Pure]
     public static function msgCode(
         int $code,
         string $msg
     ): self {
-        return new self(code: $code, msg: $msg);
+        return (new self())->setCode(
+            $code
+        )->setMsg($msg);
     }
     
     /**
-     * 等同於 [setPaging]
+     * 等同于 [setPaging]
      *
      * @param  int  $page
      * @param  int  $prePage
      * @param  int  $total
      * @param  array  $data
+     *
      * @return self
      */
     public static function paging(
@@ -212,9 +216,10 @@ class Preacher
     }
     
     /**
-     * 等同於 [setReceipt]
+     * 等同于 [setReceipt]
      *
      * @param  object  $data
+     *
      * @return self
      */
     public static function receipt(object $data): self
@@ -223,9 +228,10 @@ class Preacher
     }
     
     /**
-     * 等同於 [setRows]
+     * 等同于 [setRows]
      *
      * @param  array  $data
+     *
      * @return Preacher
      */
     public static function rows(array $data): self
@@ -234,7 +240,7 @@ class Preacher
     }
     
     /**
-     * 構造函數
+     * 构造一个 [Preacher] 实例
      *
      * @param  int  $code
      * @param  string  $msg
@@ -252,6 +258,7 @@ class Preacher
      * 設置響應狀態碼
      *
      * @param  int  $code
+     *
      * @return self
      */
     public function setCode(int $code): self
@@ -275,6 +282,7 @@ class Preacher
      * 設置響應消息
      *
      * @param  string  $msg
+     *
      * @return self
      */
     public function setMsg(string $msg): self
@@ -303,6 +311,7 @@ class Preacher
      * @param  int  $prePage
      * @param  int  $total
      * @param  array  $data
+     *
      * @return self
      */
     public function setPaging(
@@ -312,10 +321,10 @@ class Preacher
         array $data
     ): self {
         $this->data['paging'] = (object) [
-            'page' => $page,
+            'page'    => $page,
             'prePage' => $prePage,
-            'total' => $total,
-            'rows' => $data,
+            'total'   => $total,
+            'rows'    => $data,
         ];
         
         return $this;
@@ -335,6 +344,7 @@ class Preacher
      * 設置回執信息
      *
      * @param  object  $data
+     *
      * @return static
      */
     public function setReceipt(object $data): static
@@ -358,6 +368,7 @@ class Preacher
      * 設置行數據
      *
      * @param  array  $data
+     *
      * @return static
      */
     public function setRows(array $data): static
@@ -397,7 +408,7 @@ class Preacher
     {
         return new Export(array_merge([
             self::DEFAULT_KEY_CODE => $this->getCode(),
-            self::DEFAULT_KEY_MSG => $this->getMsg(),
+            self::DEFAULT_KEY_MSG  => $this->getMsg(),
         ], $this->data));
     }
     
